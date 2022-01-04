@@ -1,13 +1,13 @@
-﻿apiVersion: autoscaling/v2beta2
+apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: hpa-atividade-fiap
-  namespace: fiap-aso-rodrigofior
+  name: criado-via-yaml
+  namespace: fiapaso6-rodrigo
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: blog-django-py-git
+    name: blog-django-py3
   minReplicas: 1
   maxReplicas: 10
   metrics:
@@ -15,5 +15,5 @@ spec:
       resource:
         name: cpu
         target:
-          averageUtilization: 20
+          averageUtilization: 50
           type: Utilization
